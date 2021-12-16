@@ -1,0 +1,172 @@
+body {
+    overflow: hidden;
+    margin: 0%;
+}
+
+body, html {height:100%;}
+
+div.wrap {height:100%; overflow:hidden;}
+
+/* ini: Preloader */
+ 
+#preloader {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:#745454; /* cor do background que vai ocupar o body */
+    z-index:999; /* z-index para jogar para frente e sobrepor tudo */
+}
+#preloader .inner {
+    position: absolute;
+    top: 50%; /* centralizar a parte interna do preload (onde fica a animação)*/
+    left: 50%;
+    transform: translate(-50%, -50%);  
+}
+.bolas > div {
+  display: inline-block;
+  background-color: #fff;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  margin: 3px;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-name: animarBola;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+   
+}
+.bolas > div:nth-child(1) {
+    animation-duration:0.75s ;
+    animation-delay: 0;
+}
+.bolas > div:nth-child(2) {
+    animation-duration: 0.75s ;
+    animation-delay: 0.12s;
+}
+.bolas > div:nth-child(3) {
+    animation-duration: 0.75s  ;
+    animation-delay: 0.24s;
+}
+ 
+@keyframes animarBola {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  16% {
+    -webkit-transform: scale(0.1);
+    transform: scale(0.1);
+    opacity: 0.7;
+  }
+  33% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1; 
+  } 
+}
+/* end: Preloader */
+
+.caixa-foto {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto1 {
+  position: absolute;
+  animation: animacao1 2s;
+  z-index: 5;
+}
+
+.foto2 {
+  position: absolute;
+  animation: animacao2 2s;
+  z-index: 4;
+}
+
+.foto4 {
+
+  position: absolute;
+  animation: animacao4 2s;
+  z-index: 2;
+}
+
+.foto5 {
+  position: absolute;
+  animation: animacao5 2s;
+  z-index: 1;
+}
+
+@keyframes animacao1 {
+  0% { transform: rotate(45deg); margin-right: 100%}
+  100% { transform: rotate(0deg); margin-right: 0%}
+}
+
+@keyframes animacao2 {
+  0% { transform: rotate(45deg); margin-right: 30%}
+  100% { transform: rotate(0deg);margin-right: 0%} 
+}
+
+@keyframes animacao4 {
+  0% { transform: rotate(45deg); margin-left: 30%}
+  100% {transform: rotate(0deg); margin-left: 0%}  
+}
+
+@keyframes animacao5 {
+  0% {transform: rotate(45deg);  margin-left: 100%}
+  100% {transform: rotate(0deg); margin-left: 0%}  
+}
+
+
+
+
+
+@keyframes animacao11 {
+  80% { transform: rotate(0deg)}
+  100% { transform: rotate(-5deg)}
+}
+
+@keyframes animacao22 {
+  80% { transform: rotate(0)}
+  100% { transform: rotate(-9deg)}
+}
+@keyframes animacao44 {
+  80% { transform: rotate(0)}
+  100% { transform: rotate(5deg)}
+}
+
+@keyframes animacao55 {
+  80% { transform: rotate(0)}
+  100% { transform: rotate(9deg)}
+}
+
+.foto11 {
+  animation: animacao11;
+  animation-duration:4s;
+  transform: rotate(-5deg);
+}
+
+.foto22 {
+  animation: animacao22;
+  animation-duration:4s;
+  transform: rotate(-9deg);
+}
+
+.foto44 {
+  animation: animacao44;
+  animation-duration:4s;
+  transform: rotate(5deg);
+}
+
+.foto55 {
+  animation: animacao55;
+  animation-duration:4s;
+  transform: rotate(9deg);
+}
